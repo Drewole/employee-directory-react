@@ -1,15 +1,15 @@
-import React from 'react';
+
 import Listitem from './Listitem';
 
 const List = (props) => {
-	const userData = 'data';
+    console.log(props)
 	return (
 		<div className="employee-list">
 			<h3>Results</h3>
 
-			{/* {userData.map((user) => (
-				<Listitem image={user.image} name={user.name} phone={user.phone} email={user.email} dob={user.dob} />
-			))} */}
+			{props.directoryList.map((item) => (
+				<Listitem image={item.picture} name={item.name} phone={item.phone} email={item.email} dob={item.dob} />
+			))}
 		</div>
 	);
 };
