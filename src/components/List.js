@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 
 const List = (props) => {
 	// console.log(props.directory);
+    const dataArray = props.directory 
 	return (
 		<div className="employee-list">
 			<h3>Results</h3>
@@ -18,7 +19,9 @@ const List = (props) => {
 				</thead>
                 <tbody>
 				
-                { props.directory.map( item => {
+                { dataArray.map( item => {
+                    
+                    return(
                     <tr key={item.id}>
                         
                         <td>
@@ -31,6 +34,7 @@ const List = (props) => {
                         </td>
                         <td>{item.dob}</td>
                     </tr>
+                    )
                 })}
                 </tbody>
 			</table>

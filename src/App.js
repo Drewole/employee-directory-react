@@ -1,25 +1,34 @@
-import * as react from 'react'
+import {useState, useEffect} from 'react'
 import Axios from 'axios'
 import './App.css'
 import List from './components/List'
 import DirectoryContext from './components/DirectoryContext'
 
 function App() {
-  const [ renderReady, setRenderReady ] = react.useState(false)
-	const [ directoryList, setDirectoryList ] = react.useState([]);
+  const [ renderReady, setRenderReady ] = useState(false)
+	const [ directoryList, setDirectoryList ] = useState([]);
 
-	react.useEffect( () => {
+	useEffect( () => {
     // fetch data from a url endpoint
     const getData = async () => {
-      const items = await Axios.get("https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob")
+
+      try {
+      // fetch data from a url endpoint
+      const response = await Axios.get("https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob")
+      // const items = await response.json();
       
-      const data = await {...items.data.results}
+      const data = await {...response.data.results}
       console.log(typeof data)
       console.log(data)
       const dataArray = Object.keys(data).map(i => data[i])
       console.log(typeof dataArray)
-      console.log(dataArray)
-      setDirectoryList(data)
+      console.log(...dataArray)
+      setDirectoryList(...dataArray)
+
+    } catch (error) {
+      alert(error); // catches both errors
+    }
+
     } 
     getData()
     setRenderReady(true)
