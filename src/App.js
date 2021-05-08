@@ -13,21 +13,21 @@ function App() {
     const getData = async () => {
 
       try {
-      // fetch data from a url endpoint
-      const response = await Axios.get("https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob")
-      // const items = await response.json();
-      
-      const data = await {...response.data.results}
-      console.log(typeof data)
-      console.log(data)
-      const dataArray = Object.keys(data).map(i => data[i])
-      console.log(typeof dataArray)
-      console.log(...dataArray)
-      setDirectoryList(...dataArray)
+        // fetch data from a url endpoint
+        const response = await Axios.get("https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob")
+        // const items = await response.json();
+        
+        const data = await {...response.data.results}
+        console.log(typeof data)
+        console.log(data)
+        const dataArray = Object.values(data)
+        console.log(typeof dataArray)
+        console.log(...dataArray)
+        setDirectoryList(dataArray)
 
-    } catch (error) {
-      alert(error); // catches both errors
-    }
+      } catch (error) {
+        alert(error); // catches both errors
+      }
 
     } 
     getData()

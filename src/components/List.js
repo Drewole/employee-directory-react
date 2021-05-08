@@ -1,8 +1,7 @@
-import PropTypes from "prop-types"
 
 const List = (props) => {
-	// console.log(props.directory);
-    const dataArray = props.directory 
+	console.log(props.directory)
+    // const dataArray = props.directory
 	return (
 		<div className="employee-list">
 			<h3>Results</h3>
@@ -19,7 +18,7 @@ const List = (props) => {
 				</thead>
                 <tbody>
 				
-                { dataArray.map( item => {
+                { props.directory.map( item => {
                     
                     return(
                     <tr key={item.id}>
@@ -41,12 +40,5 @@ const List = (props) => {
 		</div>
 	);
 };
-List.defaultProps = {
-  directory: []
-}
-
-List.propTypes = {
-  directory: PropTypes.array
-}
 
 export default List;
