@@ -11,8 +11,15 @@ function App() {
 	react.useEffect( () => {
     // fetch data from a url endpoint
     const getData = async () => {
-      const item = await Axios.get("https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob")
-      setDirectoryList(item.data.results)
+      const items = await Axios.get("https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob")
+      
+      const data = await {...items.data.results}
+      console.log(typeof data)
+      console.log(data)
+      const dataArray = Object.keys(data).map(i => data[i])
+      console.log(typeof dataArray)
+      console.log(dataArray)
+      setDirectoryList(data)
     } 
     getData()
     setRenderReady(true)
@@ -34,7 +41,7 @@ function App() {
             { renderReady === false ? (
               <p>Loading...</p>
             ) : (
-              <List directoryList={directoryList} />
+              <List directory={directoryList} />
             )}
             
           </div>

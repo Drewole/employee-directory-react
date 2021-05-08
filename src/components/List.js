@@ -1,17 +1,48 @@
-
-import Listitem from './Listitem';
+import PropTypes from "prop-types"
 
 const List = (props) => {
-    console.log(props)
+	// console.log(props.directory);
 	return (
 		<div className="employee-list">
 			<h3>Results</h3>
 
-			{props.directoryList.map((item) => (
-				<Listitem image={item.picture} name={item.name} phone={item.phone} email={item.email} dob={item.dob} />
-			))}
+			<table className="table">
+				<thead>
+					<tr>
+						<th>Image</th>
+						<th>Name</th>
+						<th>Phone</th>
+						<th>Email</th>
+						<th>D.O.B.</th>
+					</tr>
+				</thead>
+                <tbody>
+				
+                { props.directory.map( item => {
+                    <tr key={item.id}>
+                        
+                        <td>
+                            <img src={item.picture} alt={item.name} />
+                        </td>
+                        <td>{item.name}</td>
+                        <td>{item.phone}</td>
+                        <td>
+                            <a href={`mailto:${item.email}`}>{item.email}</a>
+                        </td>
+                        <td>{item.dob}</td>
+                    </tr>
+                })}
+                </tbody>
+			</table>
 		</div>
 	);
 };
+List.defaultProps = {
+  directory: []
+}
+
+List.propTypes = {
+  directory: PropTypes.array
+}
 
 export default List;
