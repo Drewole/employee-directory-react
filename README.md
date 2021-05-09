@@ -1,70 +1,236 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <!-- <a href="#">
+    <img src="/public/images/MusiclabLogo.png" alt="Logo"/>
+  </a> -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <h3 align="center">Employee Directory</h3>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  <p align="center">
+    Simple React employee directory that allows searching or clicking to search by table header
+    <br />
+    <a href="https://github.com/drewole/employee-directory-react"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/drewole/employee-directory-react">View Demo</a>
+    ·
+    <a href="https://github.com/drewole/employee-directory-react/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/drewole/employee-directory-react/issues">Request Feature</a>
+  </p>
+</p>
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <!-- <li><a href="#prerequisites">Prerequisites</a></li> -->
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <!-- <li><a href="#roadmap">Roadmap</a></li> -->
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### `yarn eject`
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Our Idea
+To create a music app that would allow users to create songs that they could share
+with others through our app. Anyone can view a song but a visitor must be logged
+in to be able to comment on a song. Songs are saved in a users account for reference.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Built With
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+<!-- * [Bootstrap](https://getbootstrap.com) -->
+<!-- * [FontAwesome](https://fontawesome.com) -->
+<!-- * [MySQL](https://mysql.com) -->
+* [React](https://reactjs.org/)
+* [Axios](https://www.npmjs.com/package/axios)
+* [Random User API](https://randomuser.me/)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- GETTING STARTED -->
+## Getting Started
+There are a few important steps in getting this project setup. Follow the instructions
 
-### Code Splitting
+<!-- ### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+* My Sql
+  ```sh
+  npm install npm@latest -g
+  ``` -->
 
-### Analyzing the Bundle Size
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ <!--Get a free API Key at [https://example.com](https://example.com) -->
+1. Clone the repo
+   ```sh
+   git clone https://github.com/drewole/employee-directory-react.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+   or
 
-### Making a Progressive Web App
+   ```sh
+   yarn start
+   ```
+<!-- 3. Enter your local MySql information in `.env.example`
+   ```
+    DB_HOST=localhost
+    DB_NAME=music_lab
+    DB_USER=your_username
+    DB_PASSWORD=your_password
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    SESSION_SECRET=your_secret_phrase
+   ```
+4. Seed the DB
+   ```sh
+   node seeds/index.js
+   ``` -->
+3. Run the Application
+   ```sh
+   npm start
+   ```
+   or
 
-### Advanced Configuration
+   ```sh
+   yarn start
+   ```
+6. View the application:
+   [View in Browser](localhost:3001)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- USAGE EXAMPLES -->
+## Usage
 
-### `yarn build` fails to minify
+Visit the site, sign up and make some music. If you would like to contribute please contact us.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_For more examples, please refer to the [Documentation](https://github.com/drewole/employee-directory-react)_
+
+
+
+<!-- ROADMAP -->
+<!-- ## Roadmap
+
+Planned Features:
+
+* Ability to delete and edit songs
+* Additional sets of default sounds
+* Song rating system
+* Make it so users can record sounds to be used within the app, and share those sounds with the community.
+* Add song artwork functionality
+* Ability to download their own songs as a file to the machine for publish wherever 
+* Song categorization and tags for enhanced search -->
+
+<!-- See the [open issues](https://github.com/drewole/employee-directory-react/issues) for a list of proposed features (and known issues). -->
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact the Contributors
+
+Drew Olsen - [@drewole](https://github.com/drewole)
+
+
+Project Link: [https://github.com/drewole/employee-directory-react](https://github.com/drewole/employee-directory-react)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [MIT](https://opensource.org/licenses/MIT)
+<!-- * [Font Awesome](https://fontawesome.com)
+* [Bootstrap](https://getbootstrap.com) -->
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/drewole/employee-directory-react.svg?style=for-the-badge
+[contributors-url]: https://github.com/drewole/employee-directory-react/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/drewole/employee-directory-react.svg?style=for-the-badge
+[forks-url]: https://github.com/drewole/employee-directory-react/network/members
+[stars-shield]: https://img.shields.io/github/stars/drewole/employee-directory-react.svg?style=for-the-badge
+[stars-url]: https://github.com/drewole/employee-directory-react/stargazers
+[issues-shield]: https://img.shields.io/github/issues/drewole/employee-directory-react.svg?style=for-the-badge
+[issues-url]: https://github.com/drewole/employee-directory-react/issues
+[license-shield]: https://img.shields.io/github/license/drewole/employee-directory-react.svg?style=for-the-badge
+[license-url]: https://github.com/drewole/employee-directory-react/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/drewole
+[product-screenshot]: /screenshot.png
+[product-logo]: /musicLabLogo.png
