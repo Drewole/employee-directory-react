@@ -1,9 +1,12 @@
+
 body {
   margin: 0px;
   background: rgb(232, 232, 232);
+  
 }
 .App {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App-header {
@@ -14,6 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(8px + 2vmin);
+  font-family: 'Montserrat', sans-serif;
   color: #61dafb;
 }
 
@@ -38,6 +42,21 @@ input::placeholder {
 
 table {
   width: 100%;
+}
+th {
+  text-align: left;
+  padding: 10px;
+}
+td {
+  text-align: left;
+}
+td:nth-child(2) {
+  font-weight: bold;
+  text-align: left;
+}
+td:nth-child(4){
+
+  text-align: left;
 }
 td {
   padding: 10px;

@@ -17,42 +17,53 @@ function App() {
 		searchValue,
 		setSearchValue
 	] = useState();
+	const [
+		filteredList,
+		setFilteredList
+	] = useState();
 
-	const updateSearch = (searchVal) => {
-		const newArray = { ...directoryList };
+	// const updateInput = async (input) => {
+	// 	const filtered = directoryList.filter((input) => {
+	// 		return input.name.toLowerCase().includes(input.toLowerCase());
+	// 	});
+	// 	setSearchValue(input);
+	// 	setDirectoryList(filtered);
+	// };
+	const updateInput = (e) => {
+		setSearchValue(e.target.value);
+		const search = e.target.value.toLowerCase();
+		const filtered = directoryList.filter((employee) => {
+			return (
+				employee.name.first.toLowerCase().includes(search) || employee.name.last.toLowerCase().includes(search)
+			);
+		});
+		console.log(filtered);
+		setFilteredList(filtered);
+	};
 
-		function filterItems(arr, query) {
-			let filtered = arr.filter(function(el) {
-				return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-			});
-			setDirectoryList(filtered);
+	const getData = async () => {
+		try {
+			// fetch data from a url endpoint
+			const response = await Axios.get(
+				'https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob&nat=us'
+			);
+			// const items = await response.json();
+
+			const data = await { ...response.data.results };
+
+			setDirectoryList(Object.values(data));
+		} catch (error) {
+			alert(error); // catches both errors
 		}
-
-		const filteredArray = filterItems(newArray, searchVal);
-		setDirectoryList(filteredArray);
 	};
 
 	useEffect(() => {
 		// fetch data from a url endpoint
-		const getData = async () => {
-			try {
-				// fetch data from a url endpoint
-				const response = await Axios.get(
-					'https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob&nat=us'
-				);
-				// const items = await response.json();
-
-				const data = await { ...response.data.results };
-
-				const dataArray = Object.values(data);
-				setDirectoryList(dataArray);
-			} catch (error) {
-				alert(error); // catches both errors
-			}
-		};
 		getData();
 		setRenderReady(true);
 	}, []);
+
+	// updateInput(searchValue);
 
 	return (
 		<div className="App">
@@ -65,7 +76,7 @@ function App() {
 					<div className="container">
 						<div className="search">
 							<input
-								onChange={(event) => setSearchValue(event.target.value)}
+								onChange={(e) => updateInput(e.target.value)}
 								placeholder="Search..."
 								type="text"
 								name="search"

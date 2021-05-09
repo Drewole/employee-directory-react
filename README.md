@@ -123,7 +123,7 @@ This is an example of how to list things you need to use the software and how to
    or
 
    ```sh
-   yarn start
+   yarn install
    ```
 <!-- 3. Enter your local MySql information in `.env.example`
    ```
@@ -202,7 +202,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact the Contributors
 
 Drew Olsen - [@drewole](https://github.com/drewole)
-
 
 Project Link: [https://github.com/drewole/employee-directory-react](https://github.com/drewole/employee-directory-react)
 
