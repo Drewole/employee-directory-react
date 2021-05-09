@@ -1,7 +1,14 @@
 const List = (props) => {
 	//This renders out
-	console.log(props.directory);
-	// const dataArray = props.directory
+
+	const formatTime = (date) => {
+		let newDate = new Date(date);
+
+		const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
+		const formattedDate = newDate.toLocaleDateString('en-US', options);
+		return formattedDate;
+	};
+
 	return (
 		<div className="employee-list">
 			<h3>Results</h3>
@@ -17,21 +24,21 @@ const List = (props) => {
 					</tr>
 				</thead>
 				<tbody>
-					{/* {props.directory.map((item) => {
+					{props.directory.map((item) => {
 						return (
 							<tr key={item.id.value}>
 								<td>
-									<img src={item.picture.thumbnail} alt={item.name} />
+									<img src={item.picture.thumbnail} alt={`${item.name.first} ${item.name.last}`} />
 								</td>
-								<td>{item.name}</td>
+								<td>{`${item.name.first} ${item.name.last}`}</td>
 								<td>{item.phone}</td>
 								<td>
 									<a href={`mailto:${item.email}`}>{item.email}</a>
 								</td>
-								<td>{item.dob}</td>
+								<td>{formatTime(item.dob.date)}</td>
 							</tr>
 						);
-					})} */}
+					})}
 				</tbody>
 			</table>
 		</div>

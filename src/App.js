@@ -20,7 +20,7 @@ function App() {
 			try {
 				// fetch data from a url endpoint
 				const response = await Axios.get(
-					'https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob'
+					'https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob&nat=us'
 				);
 				// const items = await response.json();
 
