@@ -1,7 +1,7 @@
-
 const List = (props) => {
-	console.log(props.directory)
-    // const dataArray = props.directory
+	//This renders out
+	console.log(props.directory);
+	// const dataArray = props.directory
 	return (
 		<div className="employee-list">
 			<h3>Results</h3>
@@ -16,26 +16,23 @@ const List = (props) => {
 						<th>D.O.B.</th>
 					</tr>
 				</thead>
-                <tbody>
-				
-                { props.directory.map( item => {
-                    
-                    return(
-                    <tr key={item.id}>
-                        
-                        <td>
-                            <img src={item.picture} alt={item.name} />
-                        </td>
-                        <td>{item.name}</td>
-                        <td>{item.phone}</td>
-                        <td>
-                            <a href={`mailto:${item.email}`}>{item.email}</a>
-                        </td>
-                        <td>{item.dob}</td>
-                    </tr>
-                    )
-                })}
-                </tbody>
+				<tbody>
+					{/* {props.directory.map((item) => {
+						return (
+							<tr key={item.id.value}>
+								<td>
+									<img src={item.picture.thumbnail} alt={item.name} />
+								</td>
+								<td>{item.name}</td>
+								<td>{item.phone}</td>
+								<td>
+									<a href={`mailto:${item.email}`}>{item.email}</a>
+								</td>
+								<td>{item.dob}</td>
+							</tr>
+						);
+					})} */}
+				</tbody>
 			</table>
 		</div>
 	);
