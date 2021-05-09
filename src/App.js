@@ -13,6 +13,24 @@ function App() {
 		directoryList,
 		setDirectoryList
 	] = useState([]);
+	const [
+		searchValue,
+		setSearchValue
+	] = useState();
+
+	const updateSearch = (searchVal) => {
+		const newArray = { ...directoryList };
+
+		function filterItems(arr, query) {
+			let filtered = arr.filter(function(el) {
+				return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+			});
+			setDirectoryList(filtered);
+		}
+
+		const filteredArray = filterItems(newArray, searchVal);
+		setDirectoryList(filteredArray);
+	};
 
 	useEffect(() => {
 		// fetch data from a url endpoint
@@ -27,7 +45,6 @@ function App() {
 				const data = await { ...response.data.results };
 
 				const dataArray = Object.values(data);
-
 				setDirectoryList(dataArray);
 			} catch (error) {
 				alert(error); // catches both errors
@@ -47,7 +64,13 @@ function App() {
 				<DirectoryContext.Provider value={(directoryList, setDirectoryList)}>
 					<div className="container">
 						<div className="search">
-							<input placeholder="Search..." type="text" name="search" id="search" />
+							<input
+								onChange={(event) => setSearchValue(event.target.value)}
+								placeholder="Search..."
+								type="text"
+								name="search"
+								id="search"
+							/>
 						</div>
 						{renderReady === false ? <p>Loading...</p> : <List directory={directoryList} />}
 					</div>
