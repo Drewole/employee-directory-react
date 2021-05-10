@@ -1,46 +1,45 @@
 import { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './App.css';
+// eslint-disable-next-line
 import List from './components/List';
+import SearchBar from './components/SearchBar';
 import DirectoryContext from './components/DirectoryContext';
 
 function App() {
+	// setting our state
+
 	const [
+		// eslint-disable-next-line
 		renderReady,
 		setRenderReady
 	] = useState(false);
 	const [
-		directoryList,
-		setDirectoryList
-	] = useState([]);
-	const [
-		searchValue,
-		setSearchValue
-	] = useState();
+		input,
+		setInput
+	] = useState('');
+	// const [
+	// 	directoryList,
+	// 	setDirectoryList
+	// ] = useState([]);
 	const [
 		filteredList,
 		setFilteredList
-	] = useState();
-
-	// const updateInput = async (input) => {
-	// 	const filtered = directoryList.filter((input) => {
-	// 		return input.name.toLowerCase().includes(input.toLowerCase());
-	// 	});
-	// 	setSearchValue(input);
-	// 	setDirectoryList(filtered);
-	// };
-	const updateInput = (e) => {
-		setSearchValue(e.target.value);
-		const search = e.target.value.toLowerCase();
-		const filtered = directoryList.filter((employee) => {
+	] = useState([]);
+	// Function used for instant search functionality. We call this onChange on the input itself.
+	const updateInput = async (input) => {
+		//Searching through the directory for matches to the first name or last name, take them out and put them in a var filtered
+		const filtered = filteredList.filter((employee) => {
 			return (
-				employee.name.first.toLowerCase().includes(search) || employee.name.last.toLowerCase().includes(search)
+				employee.name.first.toLowerCase().includes(input) || employee.name.last.toLowerCase().includes(input)
 			);
 		});
-		console.log(filtered);
+
+		setInput(input);
 		setFilteredList(filtered);
 	};
 
+	// Setting up API call
 	const getData = async () => {
 		try {
 			// fetch data from a url endpoint
@@ -51,15 +50,18 @@ function App() {
 
 			const data = await { ...response.data.results };
 
-			setDirectoryList(Object.values(data));
+			// setDirectoryList(Object.values(data));
+			setFilteredList(Object.values(data));
+			console.log(Object.values(data));
 		} catch (error) {
 			alert(error); // catches both errors
 		}
 	};
-
+	// Here we are retrieving data when the app is first loaded
 	useEffect(() => {
 		// fetch data from a url endpoint
 		getData();
+		// setFilteredList(directoryList);
 		setRenderReady(true);
 	}, []);
 
@@ -72,18 +74,10 @@ function App() {
 				<p>Use the search box, or click on a column heading to sort by that column.</p>
 			</header>
 			<main>
-				<DirectoryContext.Provider value={(directoryList, setDirectoryList)}>
+				<DirectoryContext.Provider value={(filteredList, setFilteredList)}>
 					<div className="container">
-						<div className="search">
-							<input
-								onChange={(e) => updateInput(e.target.value)}
-								placeholder="Search..."
-								type="text"
-								name="search"
-								id="search"
-							/>
-						</div>
-						{renderReady === false ? <p>Loading...</p> : <List directory={directoryList} />}
+						<SearchBar input={input} onChange={updateInput} />
+						{renderReady === false ? <p>Loading...</p> : <List directory={filteredList} />}
 					</div>
 				</DirectoryContext.Provider>
 			</main>

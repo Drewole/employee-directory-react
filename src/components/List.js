@@ -28,7 +28,7 @@ const List = (props) => {
 						return (
 							<tr key={item.id.value}>
 								<td>
-									<img src={item.picture.thumbnail} alt={`${item.name.first} ${item.name.last}`} />
+									<img src={item.picture.medium} alt={`${item.name.first} ${item.name.last}`} />
 								</td>
 								<td>{`${item.name.first} ${item.name.last}`}</td>
 								<td>{item.phone}</td>
