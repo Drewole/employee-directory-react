@@ -60,7 +60,7 @@ function App() {
 
 					<div className="container">
 						<SearchBar original={{directoryList,setDirectoryList}} search={{filteredList,setFilteredList}} />
-						{renderReady === false ? <p>Loading...</p> : <List directory={filteredList} />}
+						{renderReady === false ? <p>Loading...</p> : <List original={{directoryList,setDirectoryList}} search={{filteredList,setFilteredList}} />}
 					</div>
 
 			</main>

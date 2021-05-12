@@ -8,7 +8,10 @@ const List = (props) => {
 		const formattedDate = newDate.toLocaleDateString('en-US', options);
 		return formattedDate;
 	};
-
+	const sortName = (params) => {
+		
+	}
+	// console.log(props, "List Props")
 	return (
 		<div className="employee-list">
 			<h3>Results</h3>
@@ -17,14 +20,14 @@ const List = (props) => {
 				<thead>
 					<tr>
 						<th>Image</th>
-						<th>Name</th>
+						<th onClick={sortName}>Name</th>
 						<th>Phone</th>
 						<th>Email</th>
 						<th>D.O.B.</th>
 					</tr>
 				</thead>
 				<tbody>
-					{props.directory.map((item) => {
+					{props.search.filteredList.map((item) => {
 						return (
 							<tr key={item.id.value}>
 								<td>
