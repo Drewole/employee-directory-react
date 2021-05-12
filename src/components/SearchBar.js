@@ -7,12 +7,12 @@ const SearchBar = (props) => {
 		setSearchVal
 	] = useState('');
 	
-	console.log(props.search.filteredList,"filteredList")
-	console.log(props.original.directoryList,"directoryList")
+	// console.log(props.search.filteredList,"filteredList")
+	// console.log(props.original.directoryList,"directoryList")
 	const updateInput =  (e) => {
 	//Searching through the directory for matches to the first first name or last name, take them out and put them in a var filtered
 		const value = e.target.value;
-		console.log(value)
+		console.log(value, "Value")
 		setSearchVal(value);
 		
 		const employees = props.original.directoryList
