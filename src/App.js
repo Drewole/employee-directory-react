@@ -14,10 +14,10 @@ function App() {
 		setRenderReady
 	] = useState(false);
 	
-	// const [
-	// 	directoryList,
-	// 	setDirectoryList
-	// ] = useState([]);
+	const [
+		directoryList,
+		setDirectoryList
+	] = useState([]);
 	const [
 		filteredList,
 		setFilteredList
@@ -31,11 +31,10 @@ function App() {
 			const response = await Axios.get(
 				'https://randomuser.me/api/?results=50&inc=id,picture,name,phone,email,dob&nat=us'
 			);
-			// const items = await response.json();
 
 			const data = await { ...response.data.results };
 
-			// setDirectoryList(Object.values(data));
+			setDirectoryList(Object.values(data));
 			setFilteredList(Object.values(data));
 		} catch (error) {
 			alert(error); // catches both errors
@@ -60,7 +59,7 @@ function App() {
 			<main>
 
 					<div className="container">
-						<SearchBar search={{filteredList,setFilteredList}} />
+						<SearchBar original={{directoryList,setDirectoryList}} search={{filteredList,setFilteredList}} />
 						{renderReady === false ? <p>Loading...</p> : <List directory={filteredList} />}
 					</div>
 
