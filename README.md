@@ -74,16 +74,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-### Our Idea
-To create a music app that would allow users to create songs that they could share
-with others through our app. Anyone can view a song but a visitor must be logged
-in to be able to comment on a song. Songs are saved in a users account for reference.
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+React app to display a list of employees from an API and allow searching through them.
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 <!-- * [Bootstrap](https://getbootstrap.com) -->
 <!-- * [FontAwesome](https://fontawesome.com) -->
 <!-- * [MySQL](https://mysql.com) -->
