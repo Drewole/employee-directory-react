@@ -31,7 +31,7 @@
     <a href="https://github.com/drewole/employee-directory-react"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/drewole/employee-directory-react">View Demo</a>
+    <a href="https://drewole.github.io/employee-directory-react/">View Demo</a>
     ·
     <a href="https://github.com/drewole/employee-directory-react/issues">Report Bug</a>
     ·
@@ -198,7 +198,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Drew Olsen - [@drewole](https://github.com/drewole)
 
-Project Link: [https://github.com/drewole/employee-directory-react](https://github.com/drewole/employee-directory-react)
+Project Link: [https://drewole.github.io/employee-directory-react/](https://drewole.github.io/employee-directory-react/)
 
 
 
